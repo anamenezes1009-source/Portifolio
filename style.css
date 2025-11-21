@@ -1,0 +1,224 @@
+
+/* Variáveis para cores (ajustadas para a imagem) */
+:root {
+    --color-bg-light: #f3f3f3; /* Fundo geral muito claro */
+    --color-pink-start: #ffe0e0; /* Rosa bem claro para o início do gradiente */
+    --color-pink-end: #ffb3b3;   /* Rosa um pouco mais forte para o fim do gradiente */
+    --color-text-dark: #666;     /* Texto um pouco mais claro que preto, como na imagem */
+    --color-text-header: #8a8a8a; /* Cor para Ana Menezes | Desenvolvedora | Estudante */
+    --color-text-button: #8a8a8a; /* Cor do texto do botão "Ver mais" */
+    --color-card-placeholder: #e0e0e0; /* Cor das caixas de projeto */
+    --color-about-bg: #fff;     /* Fundo da seção "Sobre mim" é branco */
+}
+
+/* * Reset Básico 
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo principal */
+    min-height: 100vh;
+}
+
+/* * Estilo do Container Principal/Layout 
+ */
+main, .hero, .contact {
+    width: 100%;
+    max-width: 900px; /* Largura máxima para o conteúdo */
+    padding: 0 20px;
+}
+
+/* * Cabeçalho e Gradiente 
+ */
+.hero {
+    background: linear-gradient(
+        180deg, 
+        var(--color-pink-start) 0%, 
+        var(--color-pink-end) 100%
+    );
+    padding: 40px 20px 0; 
+    text-align: center;
+    color: var(--color-text-dark); 
+    margin-bottom: 20px;
+    height: 250px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-info h1 {
+    font-size: 2.2em; 
+    margin-bottom: 5px;
+    color: var(--color-text-header); 
+}
+
+.header-info p {
+    font-size: 1em; 
+    opacity: 1; 
+    margin-bottom: 0; 
+    color: var(--color-text-header); 
+}
+
+/* * Seção Sobre Mim 
+ */
+.about-me {
+    background-color: var(--color-about-bg); /* Fundo branco puro */
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: -80px; /* Mantém a sobreposição no gradiente rosa superior */
+    margin-bottom: 40px; /* Separação clara dos projetos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative; 
+    z-index: 10;
+}
+
+.about-me h2 {
+    font-size: 1.8em;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5); 
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 0.95em; 
+}
+
+/* * Seção Projetos 
+ */
+.projects {
+    padding: 0 20px 40px; /* Padding ajustado para melhor espaçamento */
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    width: 250px;
+    height: 180px;
+    background-color: var(--color-card-placeholder);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    /* Configurações para centralizar o conteúdo (ícone/link) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para os cartões em construção (Placeholders) */
+.placeholder-card {
+    background-color: #f7f7f7; 
+    border: 1px dashed #ccc; /* Borda tracejada */
+    color: var(--color-text-dark);
+}
+
+.placeholder-card i {
+    font-size: 4em; /* Tamanho do ícone de martelo */
+    margin-bottom: 10px;
+    color: #999; /* Cor cinza sutil */
+}
+
+.placeholder-card p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #999;
+}
+
+/* Estilo para o cartão do GitHub (link clicável) */
+.github-project-card {
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    flex-direction: row; /* Volta para row, pois só tem o link/ícone */
+}
+
+.github-project-card a {
+    text-decoration: none; 
+    color: #333; 
+    transition: color 0.3s;
+}
+
+.github-project-card a i {
+    font-size: 5em; 
+}
+
+.github-project-card a:hover {
+    color: var(--color-pink-end); 
+}
+
+
+.btn-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 1px solid var(--color-text-button); 
+    color: var(--color-text-button); 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-more:hover {
+    background-color: var(--color-text-button);
+    color: var(--color-bg-light); 
+}
+
+/* * Rodapé/Contatos 
+ */
+.contact {
+    display: flex;
+    justify-content: flex-end; /* Alinha ícones à direita */
+    align-items: center;
+    padding: 20px 20px 40px; 
+    position: relative; 
+}
+
+.contact h3 {
+    position: absolute;
+    left: 20px; /* Alinha o texto "Contatos" à esquerda */
+    font-size: 1.2em; 
+    color: var(--color-text-dark);
+    display: block; 
+}
+
+.contact-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.contact-links a {
+    color: var(--color-text-dark); 
+    font-size: 2em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: var(--color-pink-end); 
+}
